@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+body {
+    margin: 0px;
+    background-color: rgb(238, 235, 235);
+}
+
+
+
+.p-toolbar {
+    background: rgb(7, 95, 7);
+    color: white;
+    border: inherit;
+    border-radius: inherit;
+    gap: inherit;
+    padding: 0px 10px;
+    box-shadow: -1px -8px 10px 11px gray;
+}
+
+.p-button-link {
+    color: white;
+}
