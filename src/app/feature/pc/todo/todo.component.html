@@ -1,0 +1,36 @@
+<div class="container-search">
+    <p-inputGroup>
+        <button type="button" pButton class="pi pi-camera"></button>
+        <input type="text" pInputText placeholder="Username" />        
+    </p-inputGroup>
+    <p-dropdown [options]="timing" optionLabel="name" [showClear]="true" placeholder="Select a City"></p-dropdown>
+    <p-button (click)="onSubmitAdd()">追加</p-button>
+</div>
+
+<div class="container-list">
+    <p-orderList [value]="products" [listStyle]="{ 'max-height': '70vh' }" header="Products" [dragdrop]="true" (onReorder)="productService.updateProducts(products)">
+
+        <ng-template let-product pTemplate="item">
+            <div class="flex flex-wrap p-2 align-items-center gap-3">
+                <p-skeleton size="5rem"/>
+                <div class="flex-1 flex flex-column gap-2">
+                    <p-skeleton width="15rem"></p-skeleton>
+                    <p-skeleton width="25rem"></p-skeleton>
+                </div>
+                <p-skeleton width="100px"></p-skeleton>
+            </div>
+        </ng-template>
+        
+
+        <ng-template let-product pTemplate="item">
+            <div class="flex flex-wrap p-2 align-items-center gap-3">
+                <img src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}" [alt]="product.name" class="5rem shadow-2 flex-shrink-0 border-round" />
+                <div class="flex-1 flex flex-column gap-2">
+                    <span class="font-bold">{{ product.name }}</span>
+                    <span class="">{{ product.category }}</span>
+                </div>
+                <span class="font-bold text-900">{{ '$' + product.price }}</span>
+            </div>
+        </ng-template>
+    </p-orderList>
+</div>

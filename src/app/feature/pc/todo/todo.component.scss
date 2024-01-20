@@ -1,0 +1,9 @@
+@import 'primeflex/primeflex.scss';
+
+.container-search {
+    @include styleclass('card flex flex-column md:flex-row gap-2');
+}
+
+.container-list {
+    @include styleclass('card xl:flex xl:justify-content-center');
+}
