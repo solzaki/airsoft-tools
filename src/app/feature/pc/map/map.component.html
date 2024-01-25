@@ -1,1 +1,15 @@
-<p>map works!</p>
+<div class="grid">
+    <nav class="col-3">
+        <div class="card flex justify-content-center">
+            <p-tree class="w-full md:w-30rem" [value]="adresses" selectionMode="single"
+                (onNodeSelect)="onSelectMenu($event)"></p-tree>
+        </div>
+    </nav>
+    <div class="col-9">
+        <google-map
+            class="google-map"
+            [center]="center" 
+            [zoom]="zoom">
+        </google-map>
+    </div>
+</div>
